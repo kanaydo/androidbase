@@ -19,13 +19,13 @@ android {
     buildTypes {
 
         debug {
-            buildConfigField "String", "SERVER_URL", '"http://192.168.1.5:3000/api/v1/"'
+            buildConfigField "String", "SERVER_URL", '"http://192.168.1.15:3000/api/v1/"'
         }
 
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "SERVER_URL", '"http://192.168.1.5:3000/api/v1/"'
+            buildConfigField "String", "SERVER_URL", '"http://192.168.1.15:3000/api/v1/"'
         }
     }
 
@@ -42,13 +42,12 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    def lifecycle_version = "2.2.0"
+
     implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
 
-    def retrofit_version = "2.6.0"
     //noinspection GradleDependency
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     //noinspection GradleDependency
