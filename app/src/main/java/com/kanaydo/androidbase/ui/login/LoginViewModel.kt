@@ -13,7 +13,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
 
     private var resultMessage = MutableLiveData<String>()
     private var loadingStatus = MutableLiveData<Boolean>()
-    private var userRepository: UserRepository = UserRepository(application)
+    private var userRepository: UserRepository = UserRepository()
 
     fun validateLogin(userName: String, password: String) = Coroutines.main {
         loadingStatus.value = true

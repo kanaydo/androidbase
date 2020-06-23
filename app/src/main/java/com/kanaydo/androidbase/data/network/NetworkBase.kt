@@ -1,6 +1,6 @@
 package com.kanaydo.androidbase.data.network
 
-import android.app.Application
+import android.content.Context
 import com.kanaydo.androidbase.BuildConfig
 import com.kanaydo.androidbase.data.network.api.UserApi
 import okhttp3.OkHttpClient
@@ -10,10 +10,10 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 class NetworkBase(
-    application: Application
+    context: Context
 ) {
 
-    private val interceptor: NetworkInterceptor = NetworkInterceptor(application)
+    private val interceptor: NetworkInterceptor = NetworkInterceptor(context)
 
     /**
      * intercept any network request to back-end service, just for development purpose only
@@ -32,7 +32,7 @@ class NetworkBase(
     /**
      * build and return new retrofit instance using OkHttpClient interceptor and GSON as convert factory
      */
-    private fun connect(): Retrofit {
+    fun connect(): Retrofit {
         return Retrofit.Builder()
             .baseUrl(BuildConfig.SERVER_URL)
             .client(getInterceptor())
