@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Android Base</string>
+
+    <!--start hint-->
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <!--end hint-->
+
+    <!--start command-->
+    <string name="cmd_login">Login</string>
+    <!--end command-->
+
+    <!--start alert-->
+    <string name="alert_empty_input">Make sure to fill all fields!</string>
 </resources>

@@ -28,9 +28,17 @@ class LoginActivity : AppCompatActivity() {
         val loadingDialog = LoadingDialog(this)
         owner = this
 
+
         // view actions
         btnLogin.setOnClickListener {
-            viewModel.validateLogin(etUserName.text.toString(), etPassword.text.toString())
+            val username = etUserName.text.toString()
+            val password = etPassword.text.toString()
+            if (username == "" || password == "") {
+                showMessage(getString(R.string.alert_empty_input))
+            } else {
+                viewModel.validateLogin(username, password)
+            }
+
         }
 
         // view model observer

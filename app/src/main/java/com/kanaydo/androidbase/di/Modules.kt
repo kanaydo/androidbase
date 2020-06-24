@@ -6,8 +6,6 @@ import org.koin.android.ext.koin.androidContext
 import retrofit2.Retrofit
 import org.koin.dsl.module
 
-
-
 val appModule = module {
     single {
         provideNetwork(androidContext())

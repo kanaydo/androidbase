@@ -15,6 +15,7 @@ class LoadingDialog(
         with(dialog) {
             requestWindowFeature(Window.FEATURE_NO_TITLE)
             setCancelable(false)
+            window?.setBackgroundDrawableResource(android.R.color.transparent)
             setContentView(R.layout.loading_dialog)
         }
     }

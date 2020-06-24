@@ -8,7 +8,7 @@ import com.kanaydo.androidbase.data.responses.UserLoginResponse
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 
-class UserRepository() : SafeApiRequest(), KoinComponent {
+class UserRepository : SafeApiRequest(), KoinComponent {
 
     private val userApi : UserApi by inject()
 
