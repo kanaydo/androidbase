@@ -40,5 +40,5 @@ class NetworkBase(
             .build()
     }
 
-    fun getUserApi() : UserApi = connect().create(UserApi::class.java)
+    fun getUserApi(): UserApi = connect().create(UserApi::class.java)
 }

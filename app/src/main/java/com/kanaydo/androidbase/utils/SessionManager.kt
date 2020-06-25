@@ -27,18 +27,18 @@ class SessionManager(context: Context) {
         this.applicationContext = context
     }
 
-    fun activeUser() : Int {
+    fun activeUser(): Int {
         return preferences.getInt(SAVED_USER_ID_KEY, 0)
     }
 
     fun login(user: User) {
-        with(preferences.edit()){
+        with(preferences.edit()) {
             putInt(SAVED_USER_ID_KEY, user.id)
             putBoolean(IS_LOGIN_KEY, true)
             commit()
         }
         val intent = Intent(applicationContext, MainActivity::class.java)
-        with(intent){
+        with(intent) {
             flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
             flags = Intent.FLAG_ACTIVITY_NEW_TASK
         }
@@ -54,25 +54,23 @@ class SessionManager(context: Context) {
         }
     }
 
-    private fun isLoggedIn() : Boolean {
+    private fun isLoggedIn(): Boolean {
         return preferences.getBoolean(IS_LOGIN_KEY, false)
     }
 
 
     fun logout() {
-        with(preferences.edit()){
+        with(preferences.edit()) {
             clear()
             commit()
         }
         val intent = Intent(applicationContext, LoginActivity::class.java)
-        with(intent){
+        with(intent) {
             flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
             flags = Intent.FLAG_ACTIVITY_NEW_TASK
         }
         applicationContext.startActivity(intent)
     }
-
-
 
 
 }

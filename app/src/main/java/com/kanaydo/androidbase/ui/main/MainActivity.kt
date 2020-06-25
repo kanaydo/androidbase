@@ -1,12 +1,8 @@
 package com.kanaydo.androidbase.ui.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.kanaydo.androidbase.R
-import com.kanaydo.androidbase.utils.SessionManager
-import org.koin.android.ext.android.inject
-import org.koin.core.inject
 
 class MainActivity : AppCompatActivity() {
 

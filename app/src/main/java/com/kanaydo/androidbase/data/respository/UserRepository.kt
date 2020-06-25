@@ -1,6 +1,5 @@
 package com.kanaydo.androidbase.data.respository
 
-import android.content.Context
 import com.kanaydo.androidbase.data.network.SafeApiRequest
 import com.kanaydo.androidbase.data.network.api.UserApi
 import com.kanaydo.androidbase.data.params.LoginParams
@@ -10,9 +9,9 @@ import org.koin.core.inject
 
 class UserRepository : SafeApiRequest(), KoinComponent {
 
-    private val userApi : UserApi by inject()
+    private val userApi: UserApi by inject()
 
-    suspend fun loginUser(loginParams: LoginParams) : UserLoginResponse {
+    suspend fun loginUser(loginParams: LoginParams): UserLoginResponse {
         return apiRequest { userApi.loginEmployee(loginParams) }
     }
 

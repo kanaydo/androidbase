@@ -1,8 +1,8 @@
 package com.kanaydo.androidbase.data.network
 
-import com.kanaydo.androidbase.data.responses.ErrorResponse
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.kanaydo.androidbase.data.responses.ErrorResponse
 import retrofit2.Response
 import java.io.IOException
 

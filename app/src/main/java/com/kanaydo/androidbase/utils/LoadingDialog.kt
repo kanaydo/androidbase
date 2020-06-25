@@ -9,7 +9,7 @@ class LoadingDialog(
     context: Context
 ) {
 
-    private var dialog : Dialog = Dialog(context)
+    private var dialog: Dialog = Dialog(context)
 
     init {
         with(dialog) {

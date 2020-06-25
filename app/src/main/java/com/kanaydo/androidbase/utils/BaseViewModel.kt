@@ -9,14 +9,14 @@ import org.koin.core.inject
 
 open class BaseViewModel(application: Application) : AndroidViewModel(application), KoinComponent {
 
-    val sessionManager : SessionManager by inject()
+    val sessionManager: SessionManager by inject()
 
     var message = MutableLiveData<String>()
 
     var loading = MutableLiveData<Boolean>()
 
 
-    fun message() : LiveData<String> = message
+    fun message(): LiveData<String> = message
 
-    fun loading() : LiveData<Boolean> = loading
+    fun loading(): LiveData<Boolean> = loading
 }

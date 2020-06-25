@@ -15,7 +15,7 @@ class NetworkInterceptor(
         if (!connected()) throw ApiBaseException("Not connected to network, Please check your internet connection before try again!")
         try {
             return chain.proceed(chain.request())
-        } catch (conn_exception: ConnectException){
+        } catch (conn_exception: ConnectException) {
             throw ApiBaseException("Not connected to server, Please contact your server provider!")
         } catch (rto_exception: SocketTimeoutException) {
             throw ApiBaseException("Request Timeout, please try again!")
@@ -23,7 +23,7 @@ class NetworkInterceptor(
     }
 
 
-    private fun connected() : Boolean {
+    private fun connected(): Boolean {
         val conn = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         conn.activeNetworkInfo.also {
             return it != null && it.isConnected

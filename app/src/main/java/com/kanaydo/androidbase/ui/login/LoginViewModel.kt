@@ -24,7 +24,7 @@ class LoginViewModel(application: Application) : BaseViewModel(application) {
                 loading.value = false
                 sessionManager.login(loginResponse.user)
             }
-        } catch (e: ApiBaseException){
+        } catch (e: ApiBaseException) {
             loading.value = false
             message.value = e.message!!
         }
