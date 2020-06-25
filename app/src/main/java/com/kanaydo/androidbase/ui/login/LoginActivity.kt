@@ -43,11 +43,11 @@ class LoginActivity : AppCompatActivity() {
 
         // view model observer
         with(viewModel) {
-            resultMessage().observe(owner, Observer { message ->
+            message().observe(owner, Observer { message ->
                 showMessage(message)
             })
 
-            loadingStatus().observe(owner, Observer { isLoading ->
+            loading().observe(owner, Observer { isLoading ->
                 loadingDialog.show(isLoading)
             })
         }

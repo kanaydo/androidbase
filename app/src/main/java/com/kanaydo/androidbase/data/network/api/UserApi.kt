@@ -8,7 +8,7 @@ import retrofit2.http.POST
 
 interface UserApi {
 
-    @POST("employee_sessions")
+    @POST("tokens")
     suspend fun loginEmployee(@Body loginParams: LoginParams) : Response<UserLoginResponse>
 
 }
