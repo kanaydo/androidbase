@@ -14,7 +14,6 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var viewModel: LoginViewModel
     private lateinit var owner: LifecycleOwner
-    private lateinit var factory: LoginViewModelFactory
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,8 +22,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         // init dep
-        factory = LoginViewModelFactory(application)
-        viewModel = ViewModelProvider(this, factory).get(LoginViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
         val loadingDialog = LoadingDialog(this)
         owner = this
 

@@ -7,7 +7,7 @@ import com.kanaydo.androidbase.data.respository.UserRepository
 import com.kanaydo.androidbase.utils.BaseViewModel
 import com.kanaydo.androidbase.utils.Coroutines
 
-class LoginViewModel(application: Application) : BaseViewModel(application) {
+class LoginViewModel : BaseViewModel() {
 
     private var userRepository: UserRepository = UserRepository()
 
